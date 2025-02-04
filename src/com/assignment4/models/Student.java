@@ -1,3 +1,5 @@
+package com.assignment4.models;
+
 public class Student {
 
     private int studentID;

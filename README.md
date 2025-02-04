@@ -25,7 +25,7 @@ Example Output
 
 course1.csv
 
-    Student ID,Student Name,Course,Grade
+    com.assignment4.models.Student ID,com.assignment4.models.Student Name,Course,Grade
     28,Justin Conrad,COMPSCI 310,99
     37,Simone Scott,COMPSCI 312,91
     91,Donald Schultz,COMPSCI 321,87
@@ -37,7 +37,7 @@ course1.csv
 
 course2.csv
 
-    Student ID,Student Name,Course,Grade
+    com.assignment4.models.Student ID,com.assignment4.models.Student Name,Course,Grade
     89,Alison Murray,APMTH 134,93
     59,Amber-Rose Austin,APMTH 129,93
     68,Aran Rice,APMTH 131,89
@@ -48,7 +48,7 @@ course2.csv
 
 course3.csv
 
-    Student ID,Student Name,Course,Grade
+    com.assignment4.models.Student ID,com.assignment4.models.Student Name,Course,Grade
     15,Padraig Barry,STAT 236,93
     39,Zachariah Hutchinson,STAT 240,92
     33,Stewart Reed,STAT 239,90
