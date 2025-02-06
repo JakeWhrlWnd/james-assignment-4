@@ -1,5 +1,5 @@
 public class Student {
-
+    // May convert to a record after completion of review
     private final int studentID;
     private final String studentName;
     private final String course;
