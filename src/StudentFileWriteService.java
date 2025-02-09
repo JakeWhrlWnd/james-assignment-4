@@ -3,7 +3,7 @@ import java.util.List;
 
 public class StudentFileWriteService {
 
-    private final FileWriteService fileWriteService  = new FileWriteService();
+    private final FileWriteService fileWriteService = new FileWriteService();
     static final String HEADING = "Student ID,Student Name,Course,Grade";
 
     public void writeStudents(String filename, List<Student> students) {

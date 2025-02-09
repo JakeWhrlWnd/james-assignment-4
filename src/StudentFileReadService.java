@@ -8,7 +8,7 @@ public class StudentFileReadService {
 
     public void readStudents(String filename) {
         List<String> lines = fileReadService.readFile(filename);
-        for (String line : lines ) {
+        for (String line : lines) {
             if (line != null && !line.isEmpty()) {
                 String[] fields = line.split(",");
                 if (fields.length == 4) {
