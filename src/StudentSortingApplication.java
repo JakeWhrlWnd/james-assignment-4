@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentSortingApplication {
 
@@ -6,6 +7,29 @@ public class StudentSortingApplication {
 
         StudentFileReadService studentFileReadService = new StudentFileReadService();
         studentFileReadService.readStudents("src/student-master-list.csv");
-        System.out.println(Arrays.toString(studentFileReadService.students));
+
+        List<Student> compsciStudents = new ArrayList<>();
+        List<Student> apmthStudents = new ArrayList<>();
+        List<Student> statStudents = new ArrayList<>();
+
+        for (Student student : studentFileReadService.students) {
+            if (student.getCourse().startsWith("COMPSCI")) {
+                compsciStudents.add(student);
+            } else if (student.getCourse().startsWith("APMTH")) {
+                apmthStudents.add(student);
+            } else if (student.getCourse().startsWith("STAT")) {
+                statStudents.add(student);
+            }
+        }
+
+        StudentFileSortService studentFileSortService = new StudentFileSortService();
+        studentFileSortService.sortStudentsByDescendingGrade(compsciStudents);
+        studentFileSortService.sortStudentsByDescendingGrade(apmthStudents);
+        studentFileSortService.sortStudentsByDescendingGrade(statStudents);
+
+        StudentFileWriteService studentFileWriteService = new StudentFileWriteService();
+        studentFileWriteService.writeStudents("course1.csv", compsciStudents);
+        studentFileWriteService.writeStudents("course2.csv", apmthStudents);
+        studentFileWriteService.writeStudents("course3.csv", statStudents);
     }
 }
