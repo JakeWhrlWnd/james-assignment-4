@@ -1,3 +1,5 @@
+package com.coursesortingapp.model;
+
 public class Student {
     // Will convert to a record after review
     private final int studentID;

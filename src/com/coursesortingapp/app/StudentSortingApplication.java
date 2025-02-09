@@ -1,12 +1,20 @@
+package com.coursesortingapp.app;
+
+import com.coursesortingapp.service.student.StudentFileReadService;
+import com.coursesortingapp.service.student.StudentFileSortService;
+import com.coursesortingapp.service.student.StudentFileWriteService;
+import com.coursesortingapp.model.Student;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class StudentSortingApplication {
 
     public static void main(String[] args) {
 
         StudentFileReadService studentFileReadService = new StudentFileReadService();
-        studentFileReadService.readStudents("src/student-master-list.csv");
+        studentFileReadService.readStudents("src/com/coursesortingapp/data/student-master-list.csv");
 
         List<Student> compsciStudents = new ArrayList<>();
         List<Student> apmthStudents = new ArrayList<>();

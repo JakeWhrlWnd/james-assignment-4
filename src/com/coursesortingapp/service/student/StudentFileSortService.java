@@ -1,3 +1,7 @@
+package com.coursesortingapp.service.student;
+
+import com.coursesortingapp.model.Student;
+
 import java.util.Comparator;
 import java.util.List;
 
