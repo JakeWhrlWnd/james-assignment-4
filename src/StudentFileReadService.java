@@ -1,17 +1,29 @@
-public class StudentFileReadService {
-    // Before review, I want to switch to a List<Student>
-    public Student[] students = new Student[100];
+import java.util.ArrayList;
+import java.util.List;
 
+public class StudentFileReadService {
+
+    public List<Student> students = new ArrayList<>();
     private final FileReadService fileReadService = new FileReadService();
 
     public void readStudents(String filename) {
-        String[] lines = fileReadService.readFile(filename);
-        int index = 0;
+        List<String> lines = fileReadService.readFile(filename);
         for (String line : lines ) {
-            if (line != null && index < lines.length) {
+            if (line != null && !line.isEmpty()) {
                 String[] fields = line.split(",");
                 if (fields.length == 4) {
-                    students[index++] = new Student(Integer.parseInt(fields[0]), fields[1], fields[2], Integer.parseInt(fields[3]));
+                    try {
+                        int studentID = Integer.parseInt(fields[0].trim());
+                        String studentName = fields[1].trim();
+                        String course = fields[2].trim();
+                        int grade = Integer.parseInt(fields[3].trim());
+
+                        students.add(new Student(studentID, studentName, course, grade));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Oops, there was issue parsing the student data. Issue -> " + e.getMessage());
+                    }
+                } else {
+                    System.out.println("Oops, the data is invalid. Issue -> " + line);
                 }
             }
         }

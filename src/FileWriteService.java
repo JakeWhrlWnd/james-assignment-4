@@ -1,16 +1,19 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
+import java.util.function.Function;
 
 public class FileWriteService {
 
-    static final String HEADING = "Student ID,Student Name,Course,Grade\n";
-
-    public void writeFile(String fileName, String[] lines) {
+    public <T> void writeFile(String fileName, List<T> data, String heading, Function<T, String> formatter) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName))) {
-            bufferedWriter.write(HEADING);
-            for (String line : lines) {
-                bufferedWriter.write(line);
+            if (heading != null || !heading.isEmpty()) {
+                bufferedWriter.write(heading);
+                bufferedWriter.newLine();
+            }
+            for (T item : data) {
+                bufferedWriter.write(formatter.apply(item));
                 bufferedWriter.newLine();
             }
         } catch (IOException e) {
