@@ -1,11 +1,10 @@
 package com.coursesortingapp.model;
 
 public class Student {
-    // Will convert to a record after review
-    private final int studentID;
-    private final String studentName;
-    private final String course;
-    private final int grade;
+    private int studentID;
+    private String studentName;
+    private String course;
+    private int grade;
 
     public Student(int studentID, String studentName, String course, int grade) {
         this.studentID = studentID;
@@ -18,16 +17,32 @@ public class Student {
         return studentID;
     }
 
+    public void setStudentID(int studentID) {
+        this.studentID = studentID;
+    }
+
     public String getStudentName() {
         return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public String getCourse() {
         return course;
     }
 
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
     public int getGrade() {
         return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     @Override
